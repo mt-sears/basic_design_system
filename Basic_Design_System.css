@@ -1,0 +1,1170 @@
+/* This project is an effort to create a standard, basic, boilerplate design system in vanilla CSS that can be reused easily without concern for installing dependencies. This project, aptly named: "Basic Design System,"
+is just that, a basic modular design system with reusable elements consisting of buttons, colors, spacing, shadows, animations, and typography. 
+
+License: Creative Commons Zero 1.0 Universal (CC BY 1.0) (No attirbution required, use for any commercial or personal projects without restraint, enjoy!) */
+
+
+
+
+
+
+
+
+/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* Designing the Color Scheme for our Design System. */
+/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/* Instructions:
+
+    *****Note: I highly suggest using HSL color values, it makes selecting light/dark shades of a color easier than hex and RGB.*****
+
+    1) Start by selecting your primary color, 
+       this is usually going to be a main brand color if designing for a company, 
+       or perhaps a call-to-action color (not to be confused with our accent color which is different and I will explain why in a moment).
+       I find that the best way to pick your primary color is to find a color that you think looks good on a button, and go from there.
+
+    2) Next, select your accent color. This is going to be a color that is used to highlight important elements, separate from yout primary color.
+       this color needs to be a complementary color to your primary color, unless going for a more contrastive design. 
+       This color is going to be used for any elements you want to highlight in an area where you've already used your primary color. This is to avoid over-using your primary color. 
+       If you accent everything with your primary color, you have accented nothing since it no longer stands out. 
+
+    3) Once you have selected your primary and accent colors, it is time to select your neutral colors. Your neutral colors are going to be used...well, as neutrals. 
+       You will use these anywhere that you don't want a heavily contrasted background, but would still like a medium amount of contrast. 
+       These colors should be shades of your primary color. 
+       So, if our primary color was pink for example, our light neutral will be a shade of pink that is light enough for pink to be used as text on top of, and still pass WCAG standards.
+       And, our dark neutral will be a shade of pink that is dark enough for pink text to be used on top of, and still pass WCAG standards.
+
+    4) Finally, we need to select our text colors. These are going to be shades of, you guessed it, our primary color. In fact, they will be the exact same as our light and dark neutrals. 
+       So our light text will copy the color value of our light neutral background, and our dark text will copy the color value of our dark neutral background. 
+       (Yes, to answer the elephant in the room, these can be white/black or other colors if you prefer, I like using shades of my primary color though, I think it is more aesthetic.
+       If you want to use different color combinations, another good combination would be a very dark gray for the dark text, and a very light gray for the light text, 
+       there's no wrong answer here. Just make sure that your text colors pass WCAG standards, and that they are easy to read on top of your background colors.
+
+    5) Now we will select our light background, and dark background colors. Breaking stride here, I actually suggest these be colors that are NOT your neutral or text colors. 
+       A Light background of very light gray, or off-white, and a dark background of very dark gray, or rich black, are good choices.
+
+    6) Now, we put it all together with vanilla CSS, we will use the :root pseudo-class to create CSS variables that contain our color values, and then we can call them wherever we want to use them. */
+
+
+/* CSS Template for Color Scheme: (Color values are set to zero for template, you will have to input them yourself. Adobe Color and Coolors are good resources for color-theory brainstorming.) */
+
+:root {
+
+    --primary-color: hsl(0, 0%, 0%);
+    /* Primary Color */
+    --accent-color: hsl(0, 0%, 0%);
+    /* Accent Color */
+    --light-neutral: hsl(0, 0%, 0%);
+    /* Light Neutral */
+    --dark-neutral: hsl(0, 0%, 0%);
+    /* Dark Neutral */
+    --light-text: hsl(0, 0%, 0%);
+    /* Light Text */
+    --dark-text: hsl(0, 0%, 0%);
+    /* Dark Text */
+    --light-background: hsl(0, 0%, 0%);
+    /* Light Background */
+    --dark-background: hsl(0, 0%, 0%);
+    /* Dark Background */
+
+}
+
+/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* Designing the Color Scheme for our Design System. */
+/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* Designing the Typography Scale for our Design System. */
+/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+/* Instructions:
+
+    1) Start by selecting your base font size. This is going to be the font size that you will use for your body text. I highly suggest using 16px. You can also make two separate scales, one with 16px as the base font,
+       and one with 18px for desktop if you want a higher level of accessiblity.
+
+    2) Next, we will select our font-family pairings. You will want a separate font-family for your headings, and a separate font-family for your body text. 
+       Make sure your heading font and body font are opposite "styles" e.g. your body text can be serif, and heading text be sans-serif, or vice-cersa, but you want to avoid two serif or two sans-serif font pairings.
+
+    3) Next, determine your minimum and maximum viewports for mobile, tablet, and desktop. You can add a large desktop breakpoint as well if you like. I suggest using the following breakpoints: 
+
+       Mobile: 260px - 768px
+       Tablet: 768px - 1024px
+       Desktop: 1024px - 1920px
+       (Optional Large Desktop): 1920px - 2560px)
+
+    4) Now, we will create our typography scale. This is going to be a three part harmonious scale. Our moile scale will be a minor third scale, or intervals of 1.2 times the last step of the scale. 
+       Our tablet scale will be a minor third scale that transitions to a major third scale at the desktop breakpoint, 
+       or intervals going from 1.2 times the last step of the scale, to 1.25 times the last step of the scale.
+       Then, at 1024px, we switch to a major third scale completely. If you added the optional large desktop breakpoint, use a perfect fourth scale for that, and I also recommend upping the base font size to 18px minimum.
+       We will use the clamp() function to create our responsive scale that will scale up and down depending on the viewport size.
+
+    5) Once again, everything will be set as variables with the :rooot pseudo-class, and we will call them wherever we want to use them. We will use media queries to differentiate what scale gets displayed. */
+
+
+/* CSS Template for Typography Scale: */
+
+:root {
+
+    --base-font-size: 100%;
+    /* Base Font Size, (Do NOT use Px, use percentage to respect the user's default font-size set in their browser) */
+    --heading-font-family: 'Helvetica Neue', sans-serif;
+    /* Heading Font Family */
+    --body-font-family: 'IBM Plex Serif', serif;
+    /* Body Font Family */
+}
+
+/* Mobile Scale */
+@media screen and (min-width: 260px) and (max-width: 768px) {
+    :root {
+        --header-1-font-size: clamp(3.05rem, calc(3.05rem + 0.00vw), 3.05rem);
+        /* Mobile H1 */
+        --header-2-font-size: clamp(2.44rem, calc(2.44rem + 0.00vw), 2.44rem);
+        /* Mobile H2 */
+        --header-3-font-size: clamp(1.95rem, calc(1.95rem + 0.00vw), 1.95rem);
+        /* Mobile H3 */
+        --header-4-font-size: clamp(1.56rem, calc(1.56rem + 0.00vw), 1.56rem);
+        /* Mobile H4 */
+        --header-5-font-size: clamp(1.25rem, calc(1.25rem + 0.00vw), 1.25rem);
+        /* Mobile H5 */
+        --body-font-size: clamp(1.00rem, calc(1.00rem + 0.00vw), 1.00rem);
+        /* Mobile Body */
+        --small-font-size: clamp(0.80rem, calc(0.80rem + 0.00vw), 0.80rem);
+        /* Mobile Small */
+        --extra-small-font-size: clamp(0.64rem, calc(0.64rem + 0.00vw), 0.64rem);
+        /* Mobile Extra Small */
+    }
+}
+
+/* Tablet Scale */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    :root {
+        --header-1-font-size: clamp(3.05rem, calc(-0.42rem + 7.23vw), 4.21rem);
+        /* Tablet H1 */
+        --header-2-font-size: clamp(2.44rem, calc(0.29rem + 4.48vw), 3.16rem);
+        /* Tablet H2 */
+        --header-3-font-size: clamp(1.95rem, calc(0.71rem + 2.60vw), 2.37rem);
+        /* Tablet H3 */
+        --header-4-font-size: clamp(1.56rem, calc(0.92rem + 1.34vw), 1.78rem);
+        /* Tablet H4 */
+        --header-5-font-size: clamp(1.25rem, calc(1.00rem + 0.52vw), 1.33rem);
+        /* Tablet H5 */
+        --body-font-size: clamp(1.00rem, calc(1.00rem + 0.00vw), 1.00rem);
+        /* Tablet Body */
+        --small-font-size: clamp(0.75rem, calc(0.95rem + -0.31vw), 0.80rem);
+        /* Tablet Small */
+        --extra-small-font-size: clamp(0.56rem, calc(0.87rem + -0.48vw), 0.64rem);
+        /* Tablet Extra Small */
+    }
+}
+
+/* Desktop Scale */
+@media screen (min-width: 1024px) and (max-width: 1920px) {
+    :root {
+        --header-1-font-size: clamp(3.05rem, calc(3.05rem + 0.00vw), 3.05rem);
+        /* Desktop H1 */
+        --header-2-font-size: clamp(2.44rem, calc(2.44rem + 0.00vw), 2.44rem);
+        /* Desktop H2 */
+        --header-3-font-size: clamp(1.95rem, calc(1.95rem + 0.00vw), 1.95rem);
+        /* Desktop H3 */
+        --header-4-font-size: clamp(1.56rem, calc(1.56rem + 0.00vw), 1.56rem);
+        /* Desktop H4 */
+        --header-5-font-size: clamp(1.25rem, calc(1.25rem + 0.00vw), 1.25rem);
+        /* Desktop H5 */
+        --body-font-size: clamp(1.00rem, calc(1.00rem + 0.00vw), 1.00rem);
+        /* Desktop Body */
+        --small-font-size: clamp(0.80rem, calc(0.80rem + 0.00vw), 0.80rem);
+        /* Desktop Small */
+        --extra-small-font-size: clamp(0.64rem, calc(0.64rem + 0.00vw), 0.64rem);
+        /* Desktop Extra Small */
+    }
+}
+
+/* (Optional) Large Desktop Scale */
+@media screen and (min-width: 1920px) and (max-width: 2560px) {
+    :root {
+        --header-1-font-size: clamp(3.43rem, calc(-0.47rem + 3.25vw), 4.74rem);
+        /* Large Desktop H1 */
+        --header-2-font-size: clamp(2.75rem, calc(0.33rem + 2.01vw), 3.55rem);
+        /* Large Desktop H2 */
+        --header-3-font-size: clamp(2.20rem, calc(0.80rem + 1.17vw), 2.66rem);
+        /* Large Desktop H3 */
+        --header-4-font-size: clamp(1.76rem, calc(1.04rem + 0.60vw), 2.00rem);
+        /* Large Desktop H4 */
+        --header-5-font-size: clamp(1.41rem, calc(1.13rem + 0.23vw), 1.50rem);
+        /* Large Desktop H5 */
+        --body-font-size: clamp(1.13rem, calc(1.13rem + 0.00vw), 1.13rem);
+        /* Large Desktop Body */
+        --small-font-size: clamp(0.84rem, calc(1.07rem + -0.14vw), 0.90rem);
+        /* Large Desktop Small */
+        --extra-small-font-size: clamp(0.63rem, calc(0.98rem + -0.22vw), 0.72rem);
+        /* Large Desktop Extra Small */
+    }
+}
+
+/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* Designing the Typography Scale for our Design System. */
+/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* Designing the Shadows For Our Design System */
+/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+/* Instructions: */
+
+/* 1) We are going to use layered drop-shadows for our shadows. We will create a different colored shadow to be used on both light and dark backgrounds. 
+      We will also use three different elevations, low, medium, and high.
+      On light backgrounds, we will use a shadow with the same color as our light neutral from the color scheme section, 
+      and on dark backgrounds, we will use a shadow with our dark neutral color */
+
+/* CSS for Drop-Shadows: */
+
+:root {
+
+    --shadow-color-light: var(--dark-neutral);
+
+    /* Low Elevation Shadow Light Backgrounf */
+    --low-elevation-shadow-light-bg:
+        box-shadow: 0.3px 0.5px 0.6px hsl(var(--shadow-color) / 0.16),
+        box-shadow: 0.4px 0.8px 0.9px -1.6px hsl(var(--shadow-color) / 0.13),
+        box-shadow: 1.1px 2.2px 2.5px -3.3px hsl(var(--shadow-color) / 0.11);
+
+    /* Medium Elevation Shadow Light Background */
+    --medium-elevation-shadow-light-bg:
+        box-shadow: 0.3px 0.5px 0.6px hsl(var(--shadow-color) / 0.17),
+        box-shadow: 0.7px 1.5px 1.7px -1.1px hsl(var(--shadow-color) / 0.15),
+        box-shadow: 2.1px 4.1px 4.6px -2.2px hsl(var(--shadow-color) / 0.13),
+        box-shadow: 5.4px 10.8px 12.1px -3.3px hsl(var(--shadow-color) / 0.11);
+
+    /* High Elevation Shadow Light Background */
+    --high-elevation-shadow-light-bg:
+        box-shadow: 0.3px 0.5px 0.6px hsl(var(--shadow-color) / 0.18),
+        box-shadow: 1.4px 2.8px 3.1px -0.5px hsl(var(--shadow-color) / 0.16),
+        box-shadow: 2.9px 5.9px 6.6px -1.1px hsl(var(--shadow-color) / 0.15),
+        box-shadow: 5.7px 11.4px 12.8px -1.6px hsl(var(--shadow-color) / 0.14),
+        box-shadow: 10.4px 20.8px 23.4px -2.2px hsl(var(--shadow-color) / 0.13),
+        box-shadow: 17.9px 35.8px 40.2px -2.8px hsl(var(--shadow-color) / 0.12),
+        box-shadow: 29px 58px 65.2px -3.3px hsl(var(--shadow-color) / 0.1);
+}
+
+
+:root {
+
+    --shadow-color-dark: var(--dark-neutral);
+
+    /* Low Elevation Shadow Dark Background */
+    --low-elevation-shadow-dark-bg:
+        box-shadow: 0.3px 0.5px 0.6px hsl(var(--shadow-color) / 0.16),
+        box-shadow: 0.4px 0.8px 0.9px -1.6px hsl(var(--shadow-color) / 0.13),
+        box-shadow: 1.1px 2.2px 2.5px -3.3px hsl(var(--shadow-color) / 0.11);
+
+    /* Medium Elevation Shadow Dark Background */
+    --medium-elevation-shadow-dark-bg:
+        box-shadow: 0.3px 0.5px 0.6px hsl(var(--shadow-color) / 0.17),
+        box-shadow: 0.7px 1.5px 1.7px -1.1px hsl(var(--shadow-color) / 0.15),
+        box-shadow: 2.1px 4.1px 4.6px -2.2px hsl(var(--shadow-color) / 0.13),
+        box-shadow: 5.4px 10.8px 12.1px -3.3px hsl(var(--shadow-color) / 0.11);
+
+    /* High Elevation Shadow Dark Background */
+    --high-elevation-shadow-dark-bg:
+        box-shadow: 0.3px 0.5px 0.6px hsl(var(--shadow-color) / 0.18),
+        box-shadow: 1.4px 2.8px 3.1px -0.5px hsl(var(--shadow-color) / 0.16),
+        box-shadow: 2.9px 5.9px 6.6px -1.1px hsl(var(--shadow-color) / 0.15),
+        box-shadow: 5.7px 11.4px 12.8px -1.6px hsl(var(--shadow-color) / 0.14),
+        box-shadow: 10.4px 20.8px 23.4px -2.2px hsl(var(--shadow-color) / 0.13),
+        box-shadow: 17.9px 35.8px 40.2px -2.8px hsl(var(--shadow-color) / 0.12),
+        box-shadow: 29px 58px 65.2px -3.3px hsl(var(--shadow-color) / 0.1);
+}
+
+/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* Designing the Shadows For Our Design System */
+/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* Designing the Animations For Our Design System */
+/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+/* Instructions: */
+
+/* 1) We are only going to make a few very simple for animations, you may add more if you wish. */
+
+/* CSS for Animations: */
+
+:root {
+    --scale-up: transform: scale(1.1);
+    --scale-down: transform: scale(0.9);
+    --slide-entrance-bottom: animation: slide-entrance-bottom 1s ease-in 0.1s 1 normal forwards;
+    --slide-exit-top: animation: slide-exit-top 1s ease-in 0.1s 1 normal backwards;
+}
+
+
+
+/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* Designing the Animations For Our Design System */
+/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* Designing the Spacing System For Our Design System */
+/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+/* Instructions: */
+
+/* 1) We are going to use a 16px spacing scale for our design system. The spacing scale will be used for padding and margins. I will include both variables and classes, you may use either or both.
+      Note: If you want to replace all of the variables in the classes with the px value, instead of the vriables, just use CTRL + SHIFt + L while selecting the nested variables in VScode to edit all of them at once. 
+      It may change the root variables as well and not just the nested ones inside the classes, so I suggest copying and pasting the root variables in a separate document/window as a backup. */
+
+
+    /* Spacing Scale Variables CSS: */
+
+:root {
+
+    --spacing-4px: 4px;
+    --spacing-8px: 8px;
+    --spacing-12px: 12px;
+    --spacing-16px: 16px;
+    --spacing-24px: 24px;
+    --spacing-32px: 32px;
+    --spacing-48px: 48px;
+    --spacing-64px: 64px;
+    --spacing-96px: 96px;
+    --spacing-128px: 128px;
+    --spacing-192px: 192px;
+    --spacing-256px: 256px;
+    --spacing-384px: 384px;
+    --spacing-512px: 512px;
+    --spacing-768px: 768px;
+
+}
+
+    /* Spacing Scale Classes CSS: */
+
+
+.margin-4px {
+    margin: var(--spacing-4px);
+}
+.margin-8px {
+    margin: var(--spacing-8px);
+}
+.margin-12px {
+    margin: var(--spacing-12px);
+}
+.margin-16px {
+    margin: var(--spacing-16px);
+}
+.margin-24px {
+    margin: var(--spacing-24px);
+}
+.margin-32px {
+    margin: var(--spacing-32px);
+}
+.margin-48px {
+    margin: var(--spacing-48px);
+}
+.margin-64px {
+    margin: var(--spacing-64px);
+}
+.margin-96px {
+    margin: var(--spacing-96px);
+}
+.margin-128px {
+    margin: var(--spacing-128px);
+}
+.margin-192px {
+    margin: var(--spacing-192px);
+}
+.margin-256px {
+    margin: var(--spacing-256px);
+}
+.margin-384px {
+    margin: var(--spacing-384px);
+}
+.margin-512px {
+    margin: var(--spacing-512px);
+}
+.margin-640px {
+    margin: var(--spacing-640px);
+}
+.margin-768px {
+    margin: var(--spacing-768px);
+}
+.margin-left-4px {
+    margin-left: var(--spacing-4px);
+}
+.margin-left-8px {
+    margin-left: var(--spacing-8px);
+}
+.margin-left-12px {
+    margin-left: var(--spacing-12px);
+}
+.margin-left-16px {
+    margin-left: var(--spacing-16px);
+}
+.margin-left-24px {
+    margin-left: var(--spacing-24px);
+}
+.margin-left-32px {
+    margin-left: var(--spacing-32px);
+}
+.margin-left-48px {
+    margin-left: var(--spacing-48px);
+}
+.margin-left-64px {
+    margin-left: var(--spacing-64px);
+}
+.margin-left-96px {
+    margin-left: var(--spacing-96px);
+}
+.margin-left-128px {
+    margin-left: var(--spacing-128px);
+}
+.margin-left-192px {
+    margin-left: var(--spacing-192px);
+}
+.margin-left-256px {
+    margin-left: var(--spacing-256px);
+}
+.margin-left-384px {
+    margin-left: var(--spacing-384px);
+}
+.margin-left-512px {
+    margin-left: var(--spacing-512px);
+}
+.margin-left {
+    margin-left: var(--spacing-640px);
+}
+.margin-left {
+    margin-left: var(--spacing-768px);
+}
+.margin-right-4px {
+    margin-right: var(--spacing-4px);
+}
+.margin-right-8px {
+    margin-right: var(--spacing-8px);
+}
+.margin-right-12px {
+    margin-right: var(--spacing-12px);
+}
+.margin-right-16px {
+    margin-right: var(--spacing-16px);
+}
+.margin-right-24px {
+    margin-right: var(--spacing-24px);
+}
+.margin-right-32px {
+    margin-right: var(--spacing-32px);
+}
+.margin-right-48px {
+    margin-right: var(--spacing-48px);
+}
+.margin-right-64px {
+    margin-right: var(--spacing-64px);
+}
+.margin-right-96px {
+    margin-right: var(--spacing-96px);
+}
+.margin-right-128px {
+    margin-right: var(--spacing-128px);
+}
+.margin-right-192px {
+    margin-right: var(--spacing-192px);
+}
+.margin-right-256px {
+    margin-right: var(--spacing-256px);
+}
+.margin-right-384px {
+    margin-right: var(--spacing-384px);
+}
+.margin-right-512px {
+    margin-right: var(--spacing-512px);
+}
+.margin-right-640px {
+    margin-right: var(--spacing-640px);
+}
+.margin-right-768px {
+    margin-right: var(--spacing-768px);
+}
+.margin-top-4px {
+    margin-top: var(--spacing-4px);
+}
+.margin-top-8px {
+    margin-top: var(--spacing-8px);
+}
+.margin-top-12px {
+    margin-top: var(--spacing-12px);
+}
+.margin-top-16px {
+    margin-top: var(--spacing-16px);
+}
+.margin-top-24px {
+    margin-top: var(--spacing-24px);
+}
+.margin-top-32px {
+    margin-top: var(--spacing-32px);
+}
+.margin-top-48px {
+    margin-top: var(--spacing-48px);
+}
+.margin-top-64px {
+    margin-top: var(--spacing-64px);
+}
+.margin-top-96px {
+    margin-top: var(--spacing-96px);
+}
+.margin-top-128px {
+    margin-top: var(--spacing-128px);
+}
+.margin-top-192px {
+    margin-top: var(--spacing-192px);
+}
+.margin-top-256px {
+    margin-top: var(--spacing-256px);
+}
+.margin-top-384px {
+    margin-top: var(--spacing-384px);
+}
+.margin-top-512px {
+    margin-top: var(--spacing-512px);
+}
+.margin-top-640px {
+    margin-top: var(--spacing-640px);
+}
+.margin-top-768px {
+    margin-top: var(--spacing-768px);
+}
+.margin-bottom-4px {
+    margin-bottom: var(--spacing-4px);
+}
+.margin-bottom-8px {
+    margin-bottom: var(--spacing-8px);
+}
+.margin-bottom-12px {
+    margin-bottom: var(--spacing-12px);
+}
+.margin-bottom-16px {
+    margin-bottom: var(--spacing-16px);
+}
+.margin-bottom-24px {
+    margin-bottom: var(--spacing-24px);
+}
+.margin-bottom-32px {
+    margin-bottom: var(--spacing-32px);
+}
+.margin-bottom-48px {
+    margin-bottom: var(--spacing-48px);
+}
+.margin-bottom-64px {
+    margin-bottom: var(--spacing-64px);
+}
+.margin-bottom-96px {
+    margin-bottom: var(--spacing-96px);
+}
+.margin-bottom-128px {
+    margin-bottom: var(--spacing-128px);
+}
+.margin-bottom-192px {
+    margin-bottom: var(--spacing-192px);
+}
+.margin-bottom-256px {
+    margin-bottom: var(--spacing-256px);
+}
+.margin-bottom-384px {
+    margin-bottom: var(--spacing-384px);
+}
+.margin-bottom-512px {
+    margin-bottom: var(--spacing-512px);
+}
+.margin-bottom-640px {
+    margin-bottom: var(--spacing-640px);
+}
+.margin-bottom-768px {
+    margin-bottom: var(--spacing-768px);
+}
+.padding-4px {
+    padding: var(--spacing-4px);
+}
+.padding-8px {
+    padding: var(--spacing-8px);
+}
+.padding-12px {
+    padding: var(--spacing-12px);
+}
+.padding-16px {
+    padding: var(--spacing-16px);
+}
+.padding-24px {
+    padding: var(--spacing-24px);
+}
+.padding-32px {
+    padding: var(--spacing-32px);
+}
+.padding-48px {
+    padding: var(--spacing-48px);
+}
+.padding-64px {
+    padding: var(--spacing-64px);
+}
+.padding-96px {
+    padding: var(--spacing-96px);
+}
+.padding-128px {
+    padding: var(--spacing-128px);
+}
+.padding-192px {
+    padding: var(--spacing-192px);
+}
+.padding-256px {
+    padding: var(--spacing-256px);
+}
+.padding-384px {
+    padding: var(--spacing-384px);
+}
+.padding-512px {
+    padding: var(--spacing-512px);
+}
+.padding-640px {
+    padding: var(--spacing-640px);
+}
+.padding-768px {
+    padding: var(--spacing-768px);
+}
+.padding-left-4px {
+    padding-left: var(--spacing-4px);
+}
+.padding-left-8px {
+    padding-left: var(--spacing-8px);
+}
+.padding-left-12px {
+    padding-left: var(--spacing-12px);
+}
+.padding-left-16px {
+    padding-left: var(--spacing-16px);
+}
+.padding-left-24px {
+    padding-left: var(--spacing-24px);
+}
+.padding-left-32px {
+    padding-left: var(--spacing-32px);
+}
+.padding-left-48px {
+    padding-left: var(--spacing-48px);
+}
+.padding-left-64px {
+    padding-left: var(--spacing-64px);
+}
+.padding-left-96px {
+    padding-left: var(--spacing-96px);
+}
+.padding-left-128px {
+    padding-left: var(--spacing-128px);
+}
+.padding-left-192px {
+    padding-left: var(--spacing-192px);
+}
+.padding-left-256px {
+    padding-left: var(--spacing-256px);
+}
+.padding-left-384px {
+    padding-left: var(--spacing-384px);
+}
+.padding-left-512px {
+    padding-left: var(--spacing-512px);
+}
+.padding-left-640px {
+    padding-left: var(--spacing-640px);
+}
+.padding-left-768px {
+    padding-left: var(--spacing-768px);
+}
+.padding-right-4px {
+    padding-right: var(--spacing-4px);
+}
+.padding-right-8px {
+    padding-right: var(--spacing-8px);
+}
+.padding-right-12px {
+    padding-right: var(--spacing-12px);
+}
+.padding-right-16px {
+    padding-right: var(--spacing-16px);
+}
+.padding-right-24px {
+    padding-right: var(--spacing-24px);
+}
+.padding-right-32px {
+    padding-right: var(--spacing-32px);
+}
+.padding-right-48px {
+    padding-right: var(--spacing-48px);
+}
+.padding-right-64px {
+    padding-right: var(--spacing-64px);
+}
+.padding-right-96px {
+    padding-right: var(--spacing-96px);
+}
+.padding-right-128px {
+    padding-right: var(--spacing-128px);
+}
+.padding-right-192px {
+    padding-right: var(--spacing-192px);
+}
+.padding-right-256px {
+    padding-right: var(--spacing-256px);
+}
+.padding-right-384px {
+    padding-right: var(--spacing-384px);
+}
+.padding-right-512px {
+    padding-right: var(--spacing-512px);
+}
+.padding-right-640px {
+    padding-right: var(--spacing-640px);
+}
+.padding-right-768px {
+    padding-right: var(--spacing-768px);
+}
+.padding-top-4px {
+    padding-top: var(--spacing-4px);
+}
+.padding-top-8px {
+    padding-top: var(--spacing-8px);
+}
+.padding-top-12px {
+    padding-top: var(--spacing-12px);
+}
+.padding-top-16px {
+    padding-top: var(--spacing-16px);
+}
+.padding-top-24px {
+    padding-top: var(--spacing-24px);
+}
+.padding-top-32px {
+    padding-top: var(--spacing-32px);
+}
+.padding-top-48px {
+    padding-top: var(--spacing-48px);
+}
+.padding-top-64px {
+    padding-top: var(--spacing-64px);
+}
+.padding-top-96px {
+    padding-top: var(--spacing-96px);
+}
+.padding-top-128px {
+    padding-top: var(--spacing-128px);
+}
+.padding-top-192px {
+    padding-top: var(--spacing-192px);
+}
+.padding-top-256px {
+    padding-top: var(--spacing-256px);
+}
+.padding-top-384px {
+    padding-top: var(--spacing-384px);
+}
+.padding-top-512px {
+    padding-top: var(--spacing-512px);
+}
+.padding-top-640px {
+    padding-top: var(--spacing-640px);
+}
+.padding-top-768px {
+    padding-top: var(--spacing-768px);
+}
+.padding-bottom-4px {
+    padding-bottom: var(--spacing-4px);
+}
+.padding-bottom-8px {
+    padding-bottom: var(--spacing-8px);
+}
+.padding-bottom-12px {
+    padding-bottom: var(--spacing-12px);
+}
+.padding-bottom-16px {
+    padding-bottom: var(--spacing-16px);
+}
+.padding-bottom-24px {
+    padding-bottom: var(--spacing-24px);
+}
+.padding-bottom-32px {
+    padding-bottom: var(--spacing-32px);
+}
+.padding-bottom-48px {
+    padding-bottom: var(--spacing-48px);
+}
+.padding-bottom-64px {
+    padding-bottom: var(--spacing-64px);
+}
+.padding-bottom-96px {
+    padding-bottom: var(--spacing-96px);
+}
+.padding-bottom-128px {
+    padding-bottom: var(--spacing-128px);
+}
+.padding-bottom-192px {
+    padding-bottom: var(--spacing-192px);
+}
+.padding-bottom-256px {
+    padding-bottom: var(--spacing-256px);
+}
+.padding-bottom-384px {
+    padding-bottom: var(--spacing-384px);
+}
+.padding-bottom-512px {
+    padding-bottom: var(--spacing-512px);
+}
+.padding-bottom-640px {
+    padding-bottom: var(--spacing-640px);
+}
+.padding-bottom-768px {
+    padding-bottom: var(--spacing-768px);
+}
+
+/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* Designing the Spacing System For Our Design System */
+/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* Designing Custom Button Classes For Our Design System */
+/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+/* Instructions: */
+
+/* 1) We are going to create two custom button classes, one being a solid button, the other being an outlined button. The .button class can be renamed to anything you want.
+
+
+    /* CSS for Custom Button Classes: */
+
+    .button-filled {
+        border-radius: 10px;
+        padding: 12px 16px 12px 16px;
+        font-size: var(--header-5-font-size);
+        font-weight: bold;
+        font-family: "Helvetica Neue", sans-serif;
+        background: linear-gradient(to right, var(--primary-color) 33%, var(--dark-neutral));
+        display: inline-block;
+        color: var(--light-text-color);
+        box-shadow: var(--drop-shadow-high-light-bg);
+        letter-spacing: calc(1rem * 0.12);
+        word-spacing: calc(1rem * 0.16rem);
+    }
+    
+    .button-filled:active {
+        transform: var(--scale-down);
+        opacity: 0.8;
+    }
+    
+    .button-filled:hover {
+        transform: var(--scale-up);
+    }
+    
+    
+    .button-outlined {
+        border-radius: 10px;
+        padding: 12px 16px 12px 16px;
+        font-size: var(--header-5-font-size);
+        font-weight: bold;
+        font-family: "Helvetica Neue", sans-serif;
+        border: 2px solid var(--primary-color);
+        background: var(--light-background-color);
+        display: inline-block;
+        color: var(--primary-color);
+        box-shadow: var(--drop-shadow-high-light-bg);
+        letter-spacing: calc(1rem * 0.12);
+        word-spacing: calc(1rem * 0.16rem);
+    }
+    
+    .button-outlined:active {
+        transform: var(--scale-down);
+        opacity: 0.8;
+    }
+    
+    .button-outlined:hover {
+        transform: var(--scale-up);
+    }
+
+/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* Designing Custom Button Classes For Our Design System */
+/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* Designing the Font Classes For Our Design System */
+/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+/* Instructions: */
+
+/* 1) We are going to create a class for each step of our type scale.
+
+
+    /* CSS for Font Classes: */
+
+    .heading-1 {
+        font-size: var(--header-1-font-size);
+        line-height: 1.2;
+        letter-spacing: calc(1rem - 0.09375);
+        font-weight: light;
+        word-spacing: calc(1em * 0.16rem);
+        line-height: 1.2;
+    }
+    
+    .heading-2 {
+        font-size: var(--header-2-font-size);
+        line-height: 1.2;
+        font-weight: light;
+        letter-spacing: calc(1rem - 0.03125);
+        word-spacing: calc(1rem * 0.16rem);
+        line-height: 1.2;
+    }
+    
+    .heading-3 {
+        font-size: var(--header-3-font-size);
+        line-height: 1.2;
+        font-weight: bold;
+        word-spacing: calc(1rem * 0.16rem);
+        line-height: 1.25;
+    }
+    
+    .heading-4 {
+        font-size: var(--header-4-font-size);
+        line-height: 1.333;
+        font-weight: normal;
+        letter-spacing: calc(0.015625);
+        word-spacing: calc(1rem * 0.16rem);
+        line-height: 1.4;
+    }
+    
+    .heading-5 {
+        font-size: var(--header-5-font-size);
+        line-height: 1.333;
+        font-weight: normal;
+        word-spacing: calc(1rem * 0.16rem);
+        line-height: 1.45;
+    }
+    
+    .body-font {
+        font-size: var(--base-font-size);
+        line-height: 1.333;
+        letter-spacing: calc(1rem * 0.12);
+        word-spacing: calc(1rem * 0.16rem);
+        line-height: 1.618;
+    }
+    
+    .small-font {
+        font-size: var(--small-font-size);
+        line-height: 1.333;
+        letter-spacing: calc(1rem * 0.12px);
+        word-spacing: calc(1rem * 0.16rem);
+        line-height: 1.618;
+    }
+    
+    .extra-small-font {
+        font-size: var(--extra-small-font-size);
+        line-height: 1.333;
+        letter-spacing: calc(1rem * 0.12);
+        word-spacing: calc(1rem * 0.16rem);
+        line-height: 1.618;
+    }
+
+/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* Designing the Font Classes For Our Design System */
+/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* Designing the Color Classes For Our Design System */
+/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+/* Instructions: */
+
+/* 1) We are going to create a class for each color in our color palette. */
+
+
+    /* CSS for Color Classes: */
+
+.primary-color {
+    color: var(--primary-color);
+}
+
+.accent-color {
+    color: var(--accent-color);
+}
+
+.light-neutral {
+    color: var(--light-neutral-color);
+}
+
+.dark-neutral {
+    color: var(--dark-neutral-color);
+}
+
+.light-background {
+    color: var(--light-background-color);
+}
+
+.dark-background {
+    color: var(--dark-background-color);
+}
+
+.light-text {
+    color: var(--light-text-color);
+}
+
+.dark-text {
+    color: var(--dark-text-color);
+}
+
+/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* Designing the Color Classes For Our Design System */
+/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* Designing the Drop Shadow Classes For Our Design System *
+/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+/* Instructions: */
+
+/* 1) We are going to create a class for each drop shadow in our drop shadow palette. */
+
+
+    /* CSS for Drop Shadow Classes: */
+
+.drop-shadow-high-dark-bg {
+    box-shadow: var(--drop-shadow-high-dark-bg);
+    color: var(--shadow-color-dark);
+}
+
+.drop-shadow-high-light-bg {
+    box-shadow: var(--drop-shadow-high-light-bg);
+    color: var(--shadow-color-light)
+}
+
+.drop-shadow-medium-dark-bg {
+    box-shadow: var(--drop-shadow-medium-dark-bg);
+    color: var(--shadow-color-dark);
+}   
+
+.drop-shadow-medium-light-bg {
+    box-shadow: var(--drop-shadow-medium-light-bg);
+    color: var(--shadow-color-light);
+}
+
+.drop-shadow-low-dark-bg {
+    box-shadow: var(--drop-shadow-low-dark-bg);
+    color: var(--shadow-color-dark);
+}
+
+.drop-shadow-low-light-bg {
+    box-shadow: var(--drop-shadow-low-light-bg);
+    color: var(--shadow-color-light);
+}
+
+/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* Designing the Drop Shadow Classes For Our Design System */
+/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* Example Classes For Our Design System */
+/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+<!Doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design System</title>
+    <link rel="stylesheet" href="design-system.css">
+</head>
+<body>
+    <div class= 
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
