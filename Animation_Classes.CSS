@@ -1,0 +1,41 @@
+@import "Basic_Design_System.css";
+
+/* Local Path: Animation_Classes.css */
+
+.slide-entrance-bottom {
+    animation: var(--slide-entrance-bottom);
+}
+@keyframes slide-entrance-bottom {
+    0% {
+        opacity: 0;
+        transform: translateY(250px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.slide-exit-top {
+    animation: var(--slide-exit-top);
+}
+@keyframes slide-exit-top {
+	0% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	100% {
+		opacity: 0;
+		transform: translateY(-250px);
+    }
+}
+
+.scale-up {
+    animation: var(--scale-up);
+}
+.scale-down {
+    animation: var(--scale-down);
+}

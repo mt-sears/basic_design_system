@@ -1,0 +1,35 @@
+@import "Basic_Design_System.css";
+
+/* Local Path: Typography_Classes.css */
+
+.primary-color {
+  color: var(--primary-color);
+}
+
+.accent-color {
+  color: var(--accent-color);
+}
+
+.light-neutral {
+  color: var(--light-neutral-color);
+}
+
+.dark-neutral {
+  color: var(--dark-neutral-color);
+}
+
+.light-background {
+  color: var(--light-background-color);
+}
+
+.dark-background {
+  color: var(--dark-background-color);
+}
+
+.light-text {
+  color: var(--light-text-color);
+}
+
+.dark-text {
+  color: var(--dark-text-color);
+}

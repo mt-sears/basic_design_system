@@ -1,0 +1,30 @@
+@import "Basic_Design_System.css";
+
+/* Local Path: Shadow_Classes.css */
+
+.drop-shadow-high-dark-bg {
+  box-shadow: var(--drop-shadow-high-dark-bg);
+  color: var(--shadow-color-dark);
+}
+.drop-shadow-high-light-bg {
+  box-shadow: var(--drop-shadow-high-light-bg);
+  color: var(--shadow-color-light);
+}
+
+.drop-shadow-medium-dark-bg {
+  box-shadow: var(--drop-shadow-medium-dark-bg);
+  color: var(--shadow-color-dark);
+}
+.drop-shadow-medium-light-bg {
+  box-shadow: var(--drop-shadow-medium-light-bg);
+  color: var(--shadow-color-light);
+}
+
+.drop-shadow-low-dark-bg {
+  box-shadow: var(--drop-shadow-low-dark-bg);
+  color: var(--shadow-color-dark);
+}
+.drop-shadow-low-light-bg {
+  box-shadow: var(--drop-shadow-low-light-bg);
+  color: var(--shadow-color-light);
+}

@@ -1,0 +1,82 @@
+@import "Basic_Design_System.css";
+
+/* Local Path: Typography_Classes.css */
+
+.heading-1 {
+  font-size: var(--header-1-font-size);
+  line-height: 1.2;
+  letter-spacing: calc(1rem - 0.09375);
+  font-weight: light;
+  word-spacing: calc(1em * 0.16rem);
+  line-height: 1.2;
+}
+
+.heading-2 {
+  font-size: var(--header-2-font-size);
+  line-height: 1.2;
+  font-weight: light;
+  letter-spacing: calc(1rem - 0.03125);
+  word-spacing: calc(1rem * 0.16rem);
+  line-height: 1.2;
+}
+
+.heading-3 {
+  font-size: var(--header-3-font-size);
+  line-height: 1.2;
+  font-weight: bold;
+  word-spacing: calc(1rem * 0.16rem);
+  line-height: 1.25;
+}
+
+.heading-4 {
+  font-size: var(--header-4-font-size);
+  line-height: 1.333;
+  font-weight: normal;
+  letter-spacing: calc(0.015625);
+  word-spacing: calc(1rem * 0.16rem);
+  line-height: 1.4;
+}
+
+.heading-5 {
+  font-size: var(--header-5-font-size);
+  line-height: 1.333;
+  font-weight: normal;
+  word-spacing: calc(1rem * 0.16rem);
+  line-height: 1.45;
+}
+
+.body-font {
+  font-size: var(--base-font-size);
+  line-height: 1.333;
+  letter-spacing: calc(1rem * 0.12);
+  word-spacing: calc(1rem * 0.16rem);
+  line-height: 1.618;
+}
+
+.small-font {
+  font-size: var(--small-font-size);
+  line-height: 1.333;
+  letter-spacing: calc(1rem * 0.12px);
+  word-spacing: calc(1rem * 0.16rem);
+  line-height: 1.618;
+}
+
+.extra-small-font {
+  font-size: var(--extra-small-font-size);
+  line-height: 1.333;
+  letter-spacing: calc(1rem * 0.12);
+  word-spacing: calc(1rem * 0.16rem);
+  line-height: 1.618;
+}
+
+.navigation-font {
+  font-size: var(--heading-5-font-size);
+  letter-spacing: calc(1rem * 0.12);
+  word-spacing: calc(1rem * 0.16rem);
+  line-height: 1.618;
+  font-weight: bold;
+}
+
+.button-font {
+  font-size: var(--heading-5-font-size);
+}

@@ -1,0 +1,54 @@
+@import "Basic_Design_System.css";
+
+/* Local Path: Button_Classes.css */
+
+.button-filled {
+  border-radius: 10px;
+  padding: 12px 16px 12px 16px;
+  font-size: var(--header-5-font-size);
+  font-weight: bold;
+  font-family: "Helvetica Neue", sans-serif;
+  background: linear-gradient(
+    to right,
+    var(--primary-color) 33%,
+    var(--dark-neutral)
+  );
+  display: inline-block;
+  color: var(--light-text-color);
+  box-shadow: var(--drop-shadow-high-light-bg);
+  letter-spacing: calc(1rem * 0.12);
+  word-spacing: calc(1rem * 0.16rem);
+}
+
+.button-filled:active {
+  transform: var(--scale-down);
+  opacity: 0.8;
+}
+
+.button-filled:hover {
+  transform: var(--scale-up);
+}
+
+.button-outlined {
+  border-radius: 10px;
+  padding: 12px 16px 12px 16px;
+  font-size: var(--header-5-font-size);
+  font-weight: bold;
+  font-family: "Helvetica Neue", sans-serif;
+  border: 2px solid var(--primary-color);
+  background: var(--light-background-color);
+  display: inline-block;
+  color: var(--primary-color);
+  box-shadow: var(--drop-shadow-high-light-bg);
+  letter-spacing: calc(1rem * 0.12);
+  word-spacing: calc(1rem * 0.16rem);
+}
+
+.button-outlined:active {
+  transform: var(--scale-down);
+  opacity: 0.8;
+}
+
+.button-outlined:hover {
+  transform: var(--scale-up);
+}
