@@ -899,10 +899,10 @@ License: Creative Commons Zero 1.0 Universal (CC BY 1.0) (No attribution require
 
     /* CSS for Font Classes: */
 
-    .heading-1 {
+     .heading-1 {
         font-size: var(--header-1-font-size);
         line-height: 1.2;
-        letter-spacing: calc(1rem - 0.09375);
+        letter-spacing: calc(1rem - 0.09375rem);
         font-weight: light;
         word-spacing: calc(1em * 0.16rem);
         line-height: 1.2;
@@ -912,7 +912,7 @@ License: Creative Commons Zero 1.0 Universal (CC BY 1.0) (No attribution require
         font-size: var(--header-2-font-size);
         line-height: 1.2;
         font-weight: light;
-        letter-spacing: calc(1rem - 0.03125);
+        letter-spacing: calc(1rem - 0.03125rem);
         word-spacing: calc(1rem * 0.16rem);
         line-height: 1.2;
     }
@@ -929,7 +929,7 @@ License: Creative Commons Zero 1.0 Universal (CC BY 1.0) (No attribution require
         font-size: var(--header-4-font-size);
         line-height: 1.333;
         font-weight: normal;
-        letter-spacing: calc(0.015625);
+        letter-spacing: calc(0.015625rem);
         word-spacing: calc(1rem * 0.16rem);
         line-height: 1.4;
     }
@@ -945,7 +945,7 @@ License: Creative Commons Zero 1.0 Universal (CC BY 1.0) (No attribution require
     .body-font {
         font-size: var(--base-font-size);
         line-height: 1.333;
-        letter-spacing: calc(1rem * 0.12);
+        letter-spacing: calc(1rem * 0.12rem);
         word-spacing: calc(1rem * 0.16rem);
         line-height: 1.618;
     }
@@ -953,7 +953,7 @@ License: Creative Commons Zero 1.0 Universal (CC BY 1.0) (No attribution require
     .small-font {
         font-size: var(--small-font-size);
         line-height: 1.333;
-        letter-spacing: calc(1rem * 0.12px);
+        letter-spacing: calc(1rem * 0.12rem);
         word-spacing: calc(1rem * 0.16rem);
         line-height: 1.618;
     }
@@ -961,10 +961,11 @@ License: Creative Commons Zero 1.0 Universal (CC BY 1.0) (No attribution require
     .extra-small-font {
         font-size: var(--extra-small-font-size);
         line-height: 1.333;
-        letter-spacing: calc(1rem * 0.12);
+        letter-spacing: calc(1rem * 0.12rem);
         word-spacing: calc(1rem * 0.16rem);
         line-height: 1.618;
     }
+
 
 /*--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 /* Designing the Font Classes For Our Design System */
@@ -1082,40 +1083,4 @@ License: Creative Commons Zero 1.0 Universal (CC BY 1.0) (No attribution require
 /*--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 /* Designing the Drop Shadow Classes For Our Design System */
 /*--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-
-
-
-
-
-
-
-
- 
-
-/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-/* Example Classes For Our Design System */
-/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-
-
-<!Doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Design System</title>
-    <link rel="stylesheet" href="design-system.css">
-</head>
-<body>
-    <div class= 
-
-
-</body>
-</html>
-
-
-
-
-
-
-
 
