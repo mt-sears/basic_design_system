@@ -18,89 +18,60 @@
     /* Light Background */
     --dark-background: hsl(0, 0%, 0%);
     /* Dark Background */
-/*The font variables need media queries wrapped around unless using a preprocessor that allows media query nesting within :root */
-/* Do not paste straight into a file, make sure to wrap with media-queries first*/
---base-font-size: 100%;
+}
+
+:root {
+    --base-font-size: 100%;
     /* Base Font Size, (Do NOT use Px, use percentage to respect the user's default font-size set in their browser) */
     --heading-font-family: 'Helvetica Neue', sans-serif;
     /* Heading Font Family */
     --body-font-family: 'IBM Plex Serif', serif;
     /* Body Font Family */
+}
 
-    --header-1-font-size: clamp(3.05rem, calc(3.05rem + 0.00vw), 3.05rem);
-        /* Mobile H1 */
-        --header-2-font-size: clamp(2.44rem, calc(2.44rem + 0.00vw), 2.44rem);
-        /* Mobile H2 */
-        --header-3-font-size: clamp(1.95rem, calc(1.95rem + 0.00vw), 1.95rem);
-        /* Mobile H3 */
-        --header-4-font-size: clamp(1.56rem, calc(1.56rem + 0.00vw), 1.56rem);
-        /* Mobile H4 */
-        --header-5-font-size: clamp(1.25rem, calc(1.25rem + 0.00vw), 1.25rem);
-        /* Mobile H5 */
-        --body-font-size: clamp(1.00rem, calc(1.00rem + 0.00vw), 1.00rem);
-        /* Mobile Body */
-        --small-font-size: clamp(0.80rem, calc(0.80rem + 0.00vw), 0.80rem);
-        /* Mobile Small */
-        --extra-small-font-size: clamp(0.64rem, calc(0.64rem + 0.00vw), 0.64rem);
-        /* Mobile Extra Small */
-
---header-1-font-size: clamp(3.05rem, calc(-0.42rem + 7.23vw), 4.21rem);
-        /* Tablet H1 */
-        --header-2-font-size: clamp(2.44rem, calc(0.29rem + 4.48vw), 3.16rem);
-        /* Tablet H2 */
-        --header-3-font-size: clamp(1.95rem, calc(0.71rem + 2.60vw), 2.37rem);
-        /* Tablet H3 */
-        --header-4-font-size: clamp(1.56rem, calc(0.92rem + 1.34vw), 1.78rem);
-        /* Tablet H4 */
-        --header-5-font-size: clamp(1.25rem, calc(1.00rem + 0.52vw), 1.33rem);
-        /* Tablet H5 */
-        --body-font-size: clamp(1.00rem, calc(1.00rem + 0.00vw), 1.00rem);
-        /* Tablet Body */
-        --small-font-size: clamp(0.75rem, calc(0.95rem + -0.31vw), 0.80rem);
-        /* Tablet Small */
-        --extra-small-font-size: clamp(0.56rem, calc(0.87rem + -0.48vw), 0.64rem);
-        /* Tablet Extra Small */
-
---header-1-font-size: clamp(3.05rem, calc(3.05rem + 0.00vw), 3.05rem);
-        /* Desktop H1 */
-        --header-2-font-size: clamp(2.44rem, calc(2.44rem + 0.00vw), 2.44rem);
-        /* Desktop H2 */
-        --header-3-font-size: clamp(1.95rem, calc(1.95rem + 0.00vw), 1.95rem);
-        /* Desktop H3 */
-        --header-4-font-size: clamp(1.56rem, calc(1.56rem + 0.00vw), 1.56rem);
-        /* Desktop H4 */
-        --header-5-font-size: clamp(1.25rem, calc(1.25rem + 0.00vw), 1.25rem);
-        /* Desktop H5 */
-        --body-font-size: clamp(1.00rem, calc(1.00rem + 0.00vw), 1.00rem);
-        /* Desktop Body */
-        --small-font-size: clamp(0.80rem, calc(0.80rem + 0.00vw), 0.80rem);
-        /* Desktop Small */
-        --extra-small-font-size: clamp(0.64rem, calc(0.64rem + 0.00vw), 0.64rem);
-        /* Desktop Extra Small */
-
---header-1-font-size: clamp(3.43rem, calc(-0.47rem + 3.25vw), 4.74rem);
-        /* Large Desktop H1 */
-        --header-2-font-size: clamp(2.75rem, calc(0.33rem + 2.01vw), 3.55rem);
-        /* Large Desktop H2 */
-        --header-3-font-size: clamp(2.20rem, calc(0.80rem + 1.17vw), 2.66rem);
-        /* Large Desktop H3 */
-        --header-4-font-size: clamp(1.76rem, calc(1.04rem + 0.60vw), 2.00rem);
-        /* Large Desktop H4 */
-        --header-5-font-size: clamp(1.41rem, calc(1.13rem + 0.23vw), 1.50rem);
-        /* Large Desktop H5 */
-        --body-font-size: clamp(1.13rem, calc(1.13rem + 0.00vw), 1.13rem);
-        /* Large Desktop Body */
-        --small-font-size: clamp(0.84rem, calc(1.07rem + -0.14vw), 0.90rem);
-        /* Large Desktop Small */
-        --extra-small-font-size: clamp(0.63rem, calc(0.98rem + -0.22vw), 0.72rem);
-        /* Large Desktop Extra Small */
-
-/*The font variables need media queries wrapped around unless using a preprocessor that allows media query nesting within :root */
-/* Do not paste straight into a file, make sure to wrap with media-queries first*/
+@supports (font-size: clamp(1rem, 1vw, 1rem)) {
+    :root {
+      --header-extra-small-font-size: clamp(0.6944rem, -0.0616vw + 0.7068rem, 0.6328rem);
+          --header-small-font-size: clamp(0.8333rem, 0.0104vw + 0.8312rem, 0.8438rem);
+          --header-body-font-size: clamp(1rem, 0.125vw + 0.975rem, 1.125rem);
+          --header-5-font-size: clamp(1.2rem, 0.3vw + 1.14rem, 1.5rem);
+          --header-4-font-size: clamp(1.44rem, 0.5599vw + 1.328rem, 1.9999rem);
+          --header-3-font-size: clamp(1.728rem, 0.9385vw + 1.5403rem, 2.6665rem);
+          --header-2-font-size: clamp(2.0736rem, 1.4816vw + 1.7773rem, 3.5552rem);
+          --header-1-font-size: clamp(2.4883rem, 2.2518vw + 2.038rem, 4.7401rem);
+    }
+  }
 
 
+@supports not (font-size: clamp(1rem, 1vw, 1rem)) {
+    :root {
+      --header-extra-small-font-size: 0.6944rem;
+          --header-small-font-size: 0.8333rem;
+          --header-body-font-size: 1rem;
+          --header-5-font-size: 1.2rem;
+          --header-4-font-size: 1.44rem;
+          --header-3-font-size: 1.728rem;
+          --header-2-font-size: 2.0736rem;
+          --header-1-font-size: 2.4883rem;
+    }
+}
+@media screen and (min-width: 1920px) {
+      :root {
+        --header-extra-small-font-size: 0.6328rem;
+              --header-small-font-size: 0.8438rem;
+              --header-body-font-size: 1.125rem;
+              --header-5-font-size: 1.5rem;
+              --header-4-font-size: 1.9999rem;
+              --header-3-font-size: 2.6665rem;
+              --header-2-font-size: 3.5552rem;
+              --header-1-font-size: 4.7401rem;
+      }
+    }
 
---shadow-color-light: var(--dark-neutral);
+
+    :root {
+        
+    --shadow-color-light: var(--dark-neutral);
 
     /* Low Elevation Shadow Light Backgrounf */
     --low-elevation-shadow-light-bg:
@@ -127,7 +98,7 @@
 
 
 
---shadow-color-dark: var(--dark-neutral);
+    --shadow-color-dark: var(--dark-neutral);
 
     /* Low Elevation Shadow Dark Background */
     --low-elevation-shadow-dark-bg:
