@@ -30,9 +30,9 @@
 
     @supports (font-size: clamp(1rem, 1vw, 1rem)) {
         :root {
-          --header-extra-small-font-size: clamp(0.6944rem, -0.0616vw + 0.7068rem, 0.6328rem);
-              --header-small-font-size: clamp(0.8333rem, 0.0104vw + 0.8312rem, 0.8438rem);
-              --header-body-font-size: clamp(1rem, 0.125vw + 0.975rem, 1.125rem);
+          --extra-small-font-size: clamp(0.6944rem, -0.0616vw + 0.7068rem, 0.6328rem);
+              --small-font-size: clamp(0.8333rem, 0.0104vw + 0.8312rem, 0.8438rem);
+              --body-font-size: clamp(1rem, 0.125vw + 0.975rem, 1.125rem);
               --header-5-font-size: clamp(1.2rem, 0.3vw + 1.14rem, 1.5rem);
               --header-4-font-size: clamp(1.44rem, 0.5599vw + 1.328rem, 1.9999rem);
               --header-3-font-size: clamp(1.728rem, 0.9385vw + 1.5403rem, 2.6665rem);
@@ -43,9 +43,9 @@
     
       @supports not (font-size: clamp(1rem, 1vw, 1rem)) {
         :root {
-          --header-extra-small-font-size: 0.6944rem;
-              --header-small-font-size: 0.8333rem;
-              --header-body-font-size: 1rem;
+          --extra-small-font-size: 0.6944rem;
+              --small-font-size: 0.8333rem;
+              --body-font-size: 1rem;
               --header-5-font-size: 1.2rem;
               --header-4-font-size: 1.44rem;
               --header-3-font-size: 1.728rem;
@@ -56,9 +56,9 @@
 
         @media screen and (min-width: 1920px) {
           :root {
-            --header-extra-small-font-size: 0.6328rem;
-                  --header-small-font-size: 0.8438rem;
-                  --header-body-font-size: 1.125rem;
+            --extra-small-font-size: 0.6328rem;
+                  --small-font-size: 0.8438rem;
+                  --body-font-size: 1.125rem;
                   --header-5-font-size: 1.5rem;
                   --header-4-font-size: 1.9999rem;
                   --header-3-font-size: 2.6665rem;
