@@ -1,0 +1,662 @@
+/*Here are all of the variables that are used in the CSS files. */
+
+:root {
+
+    --primary-color: hsl(0, 0%, 0%);
+    /* Primary Color */
+    --accent-color: hsl(0, 0%, 0%);
+    /* Accent Color */
+    --light-neutral: hsl(0, 0%, 0%);
+    /* Light Neutral */
+    --dark-neutral: hsl(0, 0%, 0%);
+    /* Dark Neutral */
+    --light-text: hsl(0, 0%, 0%);
+    /* Light Text */
+    --dark-text: hsl(0, 0%, 0%);
+    /* Dark Text */
+    --light-background: hsl(0, 0%, 0%);
+    /* Light Background */
+    --dark-background: hsl(0, 0%, 0%);
+    /* Dark Background */
+/*The font variables need media queries wrapped around unless using a preprocessor that allows media query nesting within :root */
+/* Do not paste straight into a file, make sure to wrap with media-queries first*/
+--base-font-size: 100%;
+    /* Base Font Size, (Do NOT use Px, use percentage to respect the user's default font-size set in their browser) */
+    --heading-font-family: 'Helvetica Neue', sans-serif;
+    /* Heading Font Family */
+    --body-font-family: 'IBM Plex Serif', serif;
+    /* Body Font Family */
+
+    --header-1-font-size: clamp(3.05rem, calc(3.05rem + 0.00vw), 3.05rem);
+        /* Mobile H1 */
+        --header-2-font-size: clamp(2.44rem, calc(2.44rem + 0.00vw), 2.44rem);
+        /* Mobile H2 */
+        --header-3-font-size: clamp(1.95rem, calc(1.95rem + 0.00vw), 1.95rem);
+        /* Mobile H3 */
+        --header-4-font-size: clamp(1.56rem, calc(1.56rem + 0.00vw), 1.56rem);
+        /* Mobile H4 */
+        --header-5-font-size: clamp(1.25rem, calc(1.25rem + 0.00vw), 1.25rem);
+        /* Mobile H5 */
+        --body-font-size: clamp(1.00rem, calc(1.00rem + 0.00vw), 1.00rem);
+        /* Mobile Body */
+        --small-font-size: clamp(0.80rem, calc(0.80rem + 0.00vw), 0.80rem);
+        /* Mobile Small */
+        --extra-small-font-size: clamp(0.64rem, calc(0.64rem + 0.00vw), 0.64rem);
+        /* Mobile Extra Small */
+
+--header-1-font-size: clamp(3.05rem, calc(-0.42rem + 7.23vw), 4.21rem);
+        /* Tablet H1 */
+        --header-2-font-size: clamp(2.44rem, calc(0.29rem + 4.48vw), 3.16rem);
+        /* Tablet H2 */
+        --header-3-font-size: clamp(1.95rem, calc(0.71rem + 2.60vw), 2.37rem);
+        /* Tablet H3 */
+        --header-4-font-size: clamp(1.56rem, calc(0.92rem + 1.34vw), 1.78rem);
+        /* Tablet H4 */
+        --header-5-font-size: clamp(1.25rem, calc(1.00rem + 0.52vw), 1.33rem);
+        /* Tablet H5 */
+        --body-font-size: clamp(1.00rem, calc(1.00rem + 0.00vw), 1.00rem);
+        /* Tablet Body */
+        --small-font-size: clamp(0.75rem, calc(0.95rem + -0.31vw), 0.80rem);
+        /* Tablet Small */
+        --extra-small-font-size: clamp(0.56rem, calc(0.87rem + -0.48vw), 0.64rem);
+        /* Tablet Extra Small */
+
+--header-1-font-size: clamp(3.05rem, calc(3.05rem + 0.00vw), 3.05rem);
+        /* Desktop H1 */
+        --header-2-font-size: clamp(2.44rem, calc(2.44rem + 0.00vw), 2.44rem);
+        /* Desktop H2 */
+        --header-3-font-size: clamp(1.95rem, calc(1.95rem + 0.00vw), 1.95rem);
+        /* Desktop H3 */
+        --header-4-font-size: clamp(1.56rem, calc(1.56rem + 0.00vw), 1.56rem);
+        /* Desktop H4 */
+        --header-5-font-size: clamp(1.25rem, calc(1.25rem + 0.00vw), 1.25rem);
+        /* Desktop H5 */
+        --body-font-size: clamp(1.00rem, calc(1.00rem + 0.00vw), 1.00rem);
+        /* Desktop Body */
+        --small-font-size: clamp(0.80rem, calc(0.80rem + 0.00vw), 0.80rem);
+        /* Desktop Small */
+        --extra-small-font-size: clamp(0.64rem, calc(0.64rem + 0.00vw), 0.64rem);
+        /* Desktop Extra Small */
+
+--header-1-font-size: clamp(3.43rem, calc(-0.47rem + 3.25vw), 4.74rem);
+        /* Large Desktop H1 */
+        --header-2-font-size: clamp(2.75rem, calc(0.33rem + 2.01vw), 3.55rem);
+        /* Large Desktop H2 */
+        --header-3-font-size: clamp(2.20rem, calc(0.80rem + 1.17vw), 2.66rem);
+        /* Large Desktop H3 */
+        --header-4-font-size: clamp(1.76rem, calc(1.04rem + 0.60vw), 2.00rem);
+        /* Large Desktop H4 */
+        --header-5-font-size: clamp(1.41rem, calc(1.13rem + 0.23vw), 1.50rem);
+        /* Large Desktop H5 */
+        --body-font-size: clamp(1.13rem, calc(1.13rem + 0.00vw), 1.13rem);
+        /* Large Desktop Body */
+        --small-font-size: clamp(0.84rem, calc(1.07rem + -0.14vw), 0.90rem);
+        /* Large Desktop Small */
+        --extra-small-font-size: clamp(0.63rem, calc(0.98rem + -0.22vw), 0.72rem);
+        /* Large Desktop Extra Small */
+
+/*The font variables need media queries wrapped around unless using a preprocessor that allows media query nesting within :root */
+/* Do not paste straight into a file, make sure to wrap with media-queries first*/
+
+
+
+--shadow-color-light: var(--dark-neutral);
+
+    /* Low Elevation Shadow Light Backgrounf */
+    --low-elevation-shadow-light-bg:
+        box-shadow: 0.3px 0.5px 0.6px hsl(var(--shadow-color) / 0.16),
+        box-shadow: 0.4px 0.8px 0.9px -1.6px hsl(var(--shadow-color) / 0.13),
+        box-shadow: 1.1px 2.2px 2.5px -3.3px hsl(var(--shadow-color) / 0.11);
+
+    /* Medium Elevation Shadow Light Background */
+    --medium-elevation-shadow-light-bg:
+        box-shadow: 0.3px 0.5px 0.6px hsl(var(--shadow-color) / 0.17),
+        box-shadow: 0.7px 1.5px 1.7px -1.1px hsl(var(--shadow-color) / 0.15),
+        box-shadow: 2.1px 4.1px 4.6px -2.2px hsl(var(--shadow-color) / 0.13),
+        box-shadow: 5.4px 10.8px 12.1px -3.3px hsl(var(--shadow-color) / 0.11);
+
+    /* High Elevation Shadow Light Background */
+    --high-elevation-shadow-light-bg:
+        box-shadow: 0.3px 0.5px 0.6px hsl(var(--shadow-color) / 0.18),
+        box-shadow: 1.4px 2.8px 3.1px -0.5px hsl(var(--shadow-color) / 0.16),
+        box-shadow: 2.9px 5.9px 6.6px -1.1px hsl(var(--shadow-color) / 0.15),
+        box-shadow: 5.7px 11.4px 12.8px -1.6px hsl(var(--shadow-color) / 0.14),
+        box-shadow: 10.4px 20.8px 23.4px -2.2px hsl(var(--shadow-color) / 0.13),
+        box-shadow: 17.9px 35.8px 40.2px -2.8px hsl(var(--shadow-color) / 0.12),
+        box-shadow: 29px 58px 65.2px -3.3px hsl(var(--shadow-color) / 0.1);
+
+
+
+--shadow-color-dark: var(--dark-neutral);
+
+    /* Low Elevation Shadow Dark Background */
+    --low-elevation-shadow-dark-bg:
+        box-shadow: 0.3px 0.5px 0.6px hsl(var(--shadow-color) / 0.16),
+        box-shadow: 0.4px 0.8px 0.9px -1.6px hsl(var(--shadow-color) / 0.13),
+        box-shadow: 1.1px 2.2px 2.5px -3.3px hsl(var(--shadow-color) / 0.11);
+
+    /* Medium Elevation Shadow Dark Background */
+    --medium-elevation-shadow-dark-bg:
+        box-shadow: 0.3px 0.5px 0.6px hsl(var(--shadow-color) / 0.17),
+        box-shadow: 0.7px 1.5px 1.7px -1.1px hsl(var(--shadow-color) / 0.15),
+        box-shadow: 2.1px 4.1px 4.6px -2.2px hsl(var(--shadow-color) / 0.13),
+        box-shadow: 5.4px 10.8px 12.1px -3.3px hsl(var(--shadow-color) / 0.11);
+
+    /* High Elevation Shadow Dark Background */
+    --high-elevation-shadow-dark-bg:
+        box-shadow: 0.3px 0.5px 0.6px hsl(var(--shadow-color) / 0.18),
+        box-shadow: 1.4px 2.8px 3.1px -0.5px hsl(var(--shadow-color) / 0.16),
+        box-shadow: 2.9px 5.9px 6.6px -1.1px hsl(var(--shadow-color) / 0.15),
+        box-shadow: 5.7px 11.4px 12.8px -1.6px hsl(var(--shadow-color) / 0.14),
+        box-shadow: 10.4px 20.8px 23.4px -2.2px hsl(var(--shadow-color) / 0.13),
+        box-shadow: 17.9px 35.8px 40.2px -2.8px hsl(var(--shadow-color) / 0.12),
+        box-shadow: 29px 58px 65.2px -3.3px hsl(var(--shadow-color) / 0.1);
+
+
+
+
+    --scale-up: transform: scale(1.1);
+    --scale-down: transform: scale(0.9);
+    --slide-entrance-bottom: animation: slide-entrance-bottom 1s ease-in 0.1s 1 normal forwards;
+    --slide-exit-top: animation: slide-exit-top 1s ease-in 0.1s 1 normal backwards;
+
+    --spacing-4px: 4px;
+    --spacing-8px: 8px;
+    --spacing-12px: 12px;
+    --spacing-16px: 16px;
+    --spacing-24px: 24px;
+    --spacing-32px: 32px;
+    --spacing-48px: 48px;
+    --spacing-64px: 64px;
+    --spacing-96px: 96px;
+    --spacing-128px: 128px;
+    --spacing-192px: 192px;
+    --spacing-256px: 256px;
+    --spacing-384px: 384px;
+    --spacing-512px: 512px;
+    --spacing-768px: 768px;
+
+}
+
+.margin-4px {
+    margin: var(--spacing-4px);
+}
+.margin-8px {
+    margin: var(--spacing-8px);
+}
+.margin-12px {
+    margin: var(--spacing-12px);
+}
+.margin-16px {
+    margin: var(--spacing-16px);
+}
+.margin-24px {
+    margin: var(--spacing-24px);
+}
+.margin-32px {
+    margin: var(--spacing-32px);
+}
+.margin-48px {
+    margin: var(--spacing-48px);
+}
+.margin-64px {
+    margin: var(--spacing-64px);
+}
+.margin-96px {
+    margin: var(--spacing-96px);
+}
+.margin-128px {
+    margin: var(--spacing-128px);
+}
+.margin-192px {
+    margin: var(--spacing-192px);
+}
+.margin-256px {
+    margin: var(--spacing-256px);
+}
+.margin-384px {
+    margin: var(--spacing-384px);
+}
+.margin-512px {
+    margin: var(--spacing-512px);
+}
+.margin-640px {
+    margin: var(--spacing-640px);
+}
+.margin-768px {
+    margin: var(--spacing-768px);
+}
+.margin-left-4px {
+    margin-left: var(--spacing-4px);
+}
+.margin-left-8px {
+    margin-left: var(--spacing-8px);
+}
+.margin-left-12px {
+    margin-left: var(--spacing-12px);
+}
+.margin-left-16px {
+    margin-left: var(--spacing-16px);
+}
+.margin-left-24px {
+    margin-left: var(--spacing-24px);
+}
+.margin-left-32px {
+    margin-left: var(--spacing-32px);
+}
+.margin-left-48px {
+    margin-left: var(--spacing-48px);
+}
+.margin-left-64px {
+    margin-left: var(--spacing-64px);
+}
+.margin-left-96px {
+    margin-left: var(--spacing-96px);
+}
+.margin-left-128px {
+    margin-left: var(--spacing-128px);
+}
+.margin-left-192px {
+    margin-left: var(--spacing-192px);
+}
+.margin-left-256px {
+    margin-left: var(--spacing-256px);
+}
+.margin-left-384px {
+    margin-left: var(--spacing-384px);
+}
+.margin-left-512px {
+    margin-left: var(--spacing-512px);
+}
+.margin-left {
+    margin-left: var(--spacing-640px);
+}
+.margin-left {
+    margin-left: var(--spacing-768px);
+}
+.margin-right-4px {
+    margin-right: var(--spacing-4px);
+}
+.margin-right-8px {
+    margin-right: var(--spacing-8px);
+}
+.margin-right-12px {
+    margin-right: var(--spacing-12px);
+}
+.margin-right-16px {
+    margin-right: var(--spacing-16px);
+}
+.margin-right-24px {
+    margin-right: var(--spacing-24px);
+}
+.margin-right-32px {
+    margin-right: var(--spacing-32px);
+}
+.margin-right-48px {
+    margin-right: var(--spacing-48px);
+}
+.margin-right-64px {
+    margin-right: var(--spacing-64px);
+}
+.margin-right-96px {
+    margin-right: var(--spacing-96px);
+}
+.margin-right-128px {
+    margin-right: var(--spacing-128px);
+}
+.margin-right-192px {
+    margin-right: var(--spacing-192px);
+}
+.margin-right-256px {
+    margin-right: var(--spacing-256px);
+}
+.margin-right-384px {
+    margin-right: var(--spacing-384px);
+}
+.margin-right-512px {
+    margin-right: var(--spacing-512px);
+}
+.margin-right-640px {
+    margin-right: var(--spacing-640px);
+}
+.margin-right-768px {
+    margin-right: var(--spacing-768px);
+}
+.margin-top-4px {
+    margin-top: var(--spacing-4px);
+}
+.margin-top-8px {
+    margin-top: var(--spacing-8px);
+}
+.margin-top-12px {
+    margin-top: var(--spacing-12px);
+}
+.margin-top-16px {
+    margin-top: var(--spacing-16px);
+}
+.margin-top-24px {
+    margin-top: var(--spacing-24px);
+}
+.margin-top-32px {
+    margin-top: var(--spacing-32px);
+}
+.margin-top-48px {
+    margin-top: var(--spacing-48px);
+}
+.margin-top-64px {
+    margin-top: var(--spacing-64px);
+}
+.margin-top-96px {
+    margin-top: var(--spacing-96px);
+}
+.margin-top-128px {
+    margin-top: var(--spacing-128px);
+}
+.margin-top-192px {
+    margin-top: var(--spacing-192px);
+}
+.margin-top-256px {
+    margin-top: var(--spacing-256px);
+}
+.margin-top-384px {
+    margin-top: var(--spacing-384px);
+}
+.margin-top-512px {
+    margin-top: var(--spacing-512px);
+}
+.margin-top-640px {
+    margin-top: var(--spacing-640px);
+}
+.margin-top-768px {
+    margin-top: var(--spacing-768px);
+}
+.margin-bottom-4px {
+    margin-bottom: var(--spacing-4px);
+}
+.margin-bottom-8px {
+    margin-bottom: var(--spacing-8px);
+}
+.margin-bottom-12px {
+    margin-bottom: var(--spacing-12px);
+}
+.margin-bottom-16px {
+    margin-bottom: var(--spacing-16px);
+}
+.margin-bottom-24px {
+    margin-bottom: var(--spacing-24px);
+}
+.margin-bottom-32px {
+    margin-bottom: var(--spacing-32px);
+}
+.margin-bottom-48px {
+    margin-bottom: var(--spacing-48px);
+}
+.margin-bottom-64px {
+    margin-bottom: var(--spacing-64px);
+}
+.margin-bottom-96px {
+    margin-bottom: var(--spacing-96px);
+}
+.margin-bottom-128px {
+    margin-bottom: var(--spacing-128px);
+}
+.margin-bottom-192px {
+    margin-bottom: var(--spacing-192px);
+}
+.margin-bottom-256px {
+    margin-bottom: var(--spacing-256px);
+}
+.margin-bottom-384px {
+    margin-bottom: var(--spacing-384px);
+}
+.margin-bottom-512px {
+    margin-bottom: var(--spacing-512px);
+}
+.margin-bottom-640px {
+    margin-bottom: var(--spacing-640px);
+}
+.margin-bottom-768px {
+    margin-bottom: var(--spacing-768px);
+}
+.padding-4px {
+    padding: var(--spacing-4px);
+}
+.padding-8px {
+    padding: var(--spacing-8px);
+}
+.padding-12px {
+    padding: var(--spacing-12px);
+}
+.padding-16px {
+    padding: var(--spacing-16px);
+}
+.padding-24px {
+    padding: var(--spacing-24px);
+}
+.padding-32px {
+    padding: var(--spacing-32px);
+}
+.padding-48px {
+    padding: var(--spacing-48px);
+}
+.padding-64px {
+    padding: var(--spacing-64px);
+}
+.padding-96px {
+    padding: var(--spacing-96px);
+}
+.padding-128px {
+    padding: var(--spacing-128px);
+}
+.padding-192px {
+    padding: var(--spacing-192px);
+}
+.padding-256px {
+    padding: var(--spacing-256px);
+}
+.padding-384px {
+    padding: var(--spacing-384px);
+}
+.padding-512px {
+    padding: var(--spacing-512px);
+}
+.padding-640px {
+    padding: var(--spacing-640px);
+}
+.padding-768px {
+    padding: var(--spacing-768px);
+}
+.padding-left-4px {
+    padding-left: var(--spacing-4px);
+}
+.padding-left-8px {
+    padding-left: var(--spacing-8px);
+}
+.padding-left-12px {
+    padding-left: var(--spacing-12px);
+}
+.padding-left-16px {
+    padding-left: var(--spacing-16px);
+}
+.padding-left-24px {
+    padding-left: var(--spacing-24px);
+}
+.padding-left-32px {
+    padding-left: var(--spacing-32px);
+}
+.padding-left-48px {
+    padding-left: var(--spacing-48px);
+}
+.padding-left-64px {
+    padding-left: var(--spacing-64px);
+}
+.padding-left-96px {
+    padding-left: var(--spacing-96px);
+}
+.padding-left-128px {
+    padding-left: var(--spacing-128px);
+}
+.padding-left-192px {
+    padding-left: var(--spacing-192px);
+}
+.padding-left-256px {
+    padding-left: var(--spacing-256px);
+}
+.padding-left-384px {
+    padding-left: var(--spacing-384px);
+}
+.padding-left-512px {
+    padding-left: var(--spacing-512px);
+}
+.padding-left-640px {
+    padding-left: var(--spacing-640px);
+}
+.padding-left-768px {
+    padding-left: var(--spacing-768px);
+}
+.padding-right-4px {
+    padding-right: var(--spacing-4px);
+}
+.padding-right-8px {
+    padding-right: var(--spacing-8px);
+}
+.padding-right-12px {
+    padding-right: var(--spacing-12px);
+}
+.padding-right-16px {
+    padding-right: var(--spacing-16px);
+}
+.padding-right-24px {
+    padding-right: var(--spacing-24px);
+}
+.padding-right-32px {
+    padding-right: var(--spacing-32px);
+}
+.padding-right-48px {
+    padding-right: var(--spacing-48px);
+}
+.padding-right-64px {
+    padding-right: var(--spacing-64px);
+}
+.padding-right-96px {
+    padding-right: var(--spacing-96px);
+}
+.padding-right-128px {
+    padding-right: var(--spacing-128px);
+}
+.padding-right-192px {
+    padding-right: var(--spacing-192px);
+}
+.padding-right-256px {
+    padding-right: var(--spacing-256px);
+}
+.padding-right-384px {
+    padding-right: var(--spacing-384px);
+}
+.padding-right-512px {
+    padding-right: var(--spacing-512px);
+}
+.padding-right-640px {
+    padding-right: var(--spacing-640px);
+}
+.padding-right-768px {
+    padding-right: var(--spacing-768px);
+}
+.padding-top-4px {
+    padding-top: var(--spacing-4px);
+}
+.padding-top-8px {
+    padding-top: var(--spacing-8px);
+}
+.padding-top-12px {
+    padding-top: var(--spacing-12px);
+}
+.padding-top-16px {
+    padding-top: var(--spacing-16px);
+}
+.padding-top-24px {
+    padding-top: var(--spacing-24px);
+}
+.padding-top-32px {
+    padding-top: var(--spacing-32px);
+}
+.padding-top-48px {
+    padding-top: var(--spacing-48px);
+}
+.padding-top-64px {
+    padding-top: var(--spacing-64px);
+}
+.padding-top-96px {
+    padding-top: var(--spacing-96px);
+}
+.padding-top-128px {
+    padding-top: var(--spacing-128px);
+}
+.padding-top-192px {
+    padding-top: var(--spacing-192px);
+}
+.padding-top-256px {
+    padding-top: var(--spacing-256px);
+}
+.padding-top-384px {
+    padding-top: var(--spacing-384px);
+}
+.padding-top-512px {
+    padding-top: var(--spacing-512px);
+}
+.padding-top-640px {
+    padding-top: var(--spacing-640px);
+}
+.padding-top-768px {
+    padding-top: var(--spacing-768px);
+}
+.padding-bottom-4px {
+    padding-bottom: var(--spacing-4px);
+}
+.padding-bottom-8px {
+    padding-bottom: var(--spacing-8px);
+}
+.padding-bottom-12px {
+    padding-bottom: var(--spacing-12px);
+}
+.padding-bottom-16px {
+    padding-bottom: var(--spacing-16px);
+}
+.padding-bottom-24px {
+    padding-bottom: var(--spacing-24px);
+}
+.padding-bottom-32px {
+    padding-bottom: var(--spacing-32px);
+}
+.padding-bottom-48px {
+    padding-bottom: var(--spacing-48px);
+}
+.padding-bottom-64px {
+    padding-bottom: var(--spacing-64px);
+}
+.padding-bottom-96px {
+    padding-bottom: var(--spacing-96px);
+}
+.padding-bottom-128px {
+    padding-bottom: var(--spacing-128px);
+}
+.padding-bottom-192px {
+    padding-bottom: var(--spacing-192px);
+}
+.padding-bottom-256px {
+    padding-bottom: var(--spacing-256px);
+}
+.padding-bottom-384px {
+    padding-bottom: var(--spacing-384px);
+}
+.padding-bottom-512px {
+    padding-bottom: var(--spacing-512px);
+}
+.padding-bottom-640px {
+    padding-bottom: var(--spacing-640px);
+}
+.padding-bottom-768px {
+    padding-bottom: var(--spacing-768px);
+}
+
+
