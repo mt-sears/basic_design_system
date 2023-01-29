@@ -106,7 +106,7 @@ License: Creative Commons Zero 1.0 Universal (CC BY 1.0) (No attribution require
        Then, at 1024px, we switch to a major third scale completely. If you added the optional large desktop breakpoint, use a perfect fourth scale for that, and I also recommend upping the base font size to 18px minimum.
        We will use the clamp() function to create our responsive scale that will scale up and down depending on the viewport size.
 
-    5) Once again, everything will be set as variables with the :rooot pseudo-class, and we will call them wherever we want to use them. We will use media queries to differentiate what scale gets displayed. */
+    5) Once again, everything will be set as variables with the :root pseudo-class, and we will call them wherever we want to use them. We will use media queries to differentiate what scale gets displayed. */
 
 
 /* CSS Template for Typography Scale: */
