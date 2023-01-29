@@ -3,7 +3,7 @@
 This project is an effort to create a standard, basic, boilerplate design system in vanilla CSS that can be reused easily without concern for installing dependencies. This project, aptly named: "Basic Design System,"
 is just that, a basic modular design system with reusable elements consisting of buttons, colors, spacing, shadows, animations, and typography.
 
-License: Creative Commons Zero 1.0 Universal (CC BY 1.0) (No attirbution required, use for any commercial or personal projects without restraint, enjoy!) */
+License: Creative Commons Zero 1.0 Universal (CC BY 1.0) (No attribution required, use for any commercial or personal projects without restraint, enjoy!) */
 
 How To Use: 
 
